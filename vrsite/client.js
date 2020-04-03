@@ -2,6 +2,7 @@
 // If you want to modify your application's content, start in "index.js"
 
 import {ReactInstance} from 'react-360-web';
+import {Surface} from 'react-360-web';
 
 function init(bundle, parent, options = {}) {
   const r360 = new ReactInstance(bundle, parent, {
@@ -10,10 +11,17 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
+  const myCylinderSurface = new Surface(
+    4096, /* width */
+    600, /* height */
+    Surface.SurfaceShape.Cylinder /* shape */
+  );
+  myCylinderSurface.setDensity(4096)
+
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
     r360.createRoot('vrsite', { /* initial props */ }),
-    r360.getDefaultSurface()
+    myCylinderSurface
   );
 
   // Load the initial environment
