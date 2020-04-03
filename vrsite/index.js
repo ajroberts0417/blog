@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-360';
 
-export default class drewface extends React.Component {
+export default class vrsite extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('drewface', () => drewface);
+AppRegistry.registerComponent('vrsite', () => vrsite);
